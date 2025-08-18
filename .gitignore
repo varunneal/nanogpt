@@ -1,0 +1,9 @@
+fineweb10B/
+wheelhouse/
+./wheelhouse/
+.DS_Store
+.ipynb_checkpoints/
+.idea/
+pylog124M/
+__pycache__/
+logs/
