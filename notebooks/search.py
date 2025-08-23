@@ -35,12 +35,10 @@ PARAMS = [
 os.makedirs(OUTDIR, exist_ok=True)
 base = pathlib.Path(NB).stem  # e.g., "1.8.3.2 nanogpt"
 
-for p in PARAMS:
-    if 'RUN_NAME' not in p:
-        p['RUN_NAME'] = str(p)
+for i, p in enumerate(PARAMS):
     env = os.environ.copy()
     env.update({k: str(v) for k, v in p.items()})  # set SSEQ_LEN, BATCH_SIZE, LR_INIT, RUN_NAME
-    out = f"{base}.{p['RUN_NAME']}.executed.ipynb"
+    out = f"{base}_{i}.executed.ipynb"
     cmd = [
         "/usr/bin/python", "-m", "jupyter", "nbconvert",
         "--to", "notebook", "--execute", NB,
