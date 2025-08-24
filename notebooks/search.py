@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, pathlib, subprocess
+import os, pathlib, subprocess, time
 
 NB = "1.8.3.2 nanogpt.ipynb"
 OUTDIR = "executed"
@@ -49,5 +49,7 @@ for i, p in enumerate(PARAMS):
     print(f"Running {NB} with {p} -> {OUTDIR}/{out}")
     try:
         subprocess.run(cmd, env=env, check=True)
+        time.sleep(5)
     except Exception as e:
-        print(f"[WARN] Run failed for {p['RUN_NAME']}: {e}; continuing...")
+        print(f"[WARN] Run {i} failed: {e}; continuing...")
+        time.sleep(10)
