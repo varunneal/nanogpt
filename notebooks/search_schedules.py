@@ -3,7 +3,7 @@ import os, pathlib, subprocess, time
 from tqdm.auto import tqdm
 
 
-NB = "1.8.3.3 nanogpt.ipynb"
+NB = "1.8.6 nanogpt.ipynb"
 OUTDIR = "executed"
 PARAMS = [
     {"SCHEDULE": [
