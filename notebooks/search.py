@@ -41,7 +41,7 @@ PARAMS = [
 ]
 
 os.makedirs(OUTDIR, exist_ok=True)
-base = pathlib.Path(NB).stem  # e.g., "1.8.3.2 nanogpt"
+base = pathlib.Path(NB).stem
 
 for i, p in tqdm(enumerate(PARAMS)):
     env = os.environ.copy()
